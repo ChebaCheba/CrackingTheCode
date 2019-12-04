@@ -4,7 +4,6 @@ def rotate_matrix(matrix):
         last = n - i - 1
         for j in range(i, last):
             offset = j - i
-            print(matrix)
             top = matrix[i][j]
             matrix[i][j] = matrix[last-offset][i]
             matrix[last-offset][i] = matrix[last][last-j]
