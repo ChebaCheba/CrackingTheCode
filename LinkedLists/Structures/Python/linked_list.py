@@ -18,8 +18,3 @@ class LinkedList:
             string += '('+str(self.nodes[i].val)+')=>'
         string+='('+str(self.nodes[-1].val)+')'
         print(string)
-
-llist = LinkedList()
-nodes = [0,1,2,3,4,5]
-llist.create(nodes)
-llist.print_list()
