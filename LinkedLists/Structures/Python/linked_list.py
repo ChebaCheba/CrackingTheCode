@@ -77,3 +77,42 @@ class LinkedList:
             print(string)
         else:
             print('()')
+
+class ListlessLinkedList():
+    def __init__(self):
+        self.head = None
+        self.tail = None
+    def create(self, nodes):
+        prev_node = None
+        for node in nodes:
+            new_node = Node(node)
+            if prev_node:
+                prev_node.next = new_node
+                prev_node = new_node
+            else:
+                self.head = new_node
+                prev_node = new_node
+        self.tail = prev_node
+    def add_node(self, node):
+        new_node = Node(node)
+        self.tail.next = new_node
+        self.tail = new_node
+    def return_node(self, num):
+        node = self.head
+        for i in range(num-1):
+            node = node.next
+        return node 
+    def print_list(self):
+        if self.head:
+            node = self.head
+            string = ''
+            while node.next != None:
+                string += '('+str(node.val)+')=>'
+                node = node.next
+            string += '('+str(node.val)+')'
+            print(string)
+        else:
+            print('()')
+                
+        
+    

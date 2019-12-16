@@ -3,7 +3,7 @@ import os
 import random
 
 sys.path.append(os.path.join("..",".."))
-from Structures.Python.linked_list import Node
+from Structures.Python.linked_list import ListlessLinkedList
 
 def delete_mid(mid_node):
     node = mid_node
@@ -22,22 +22,15 @@ def print_list(node):
     print(string)
 
 if __name__=="__main__":
+    llist = ListlessLinkedList()
     length = int(input("Introduce length of the list\n"))
-    prev_node = None
     nodes = []
-    head = None
     for i in range(length):
         val = input("Introduce value of node\n")
-        node = Node(val)
-        nodes.append(node)
-        if prev_node:
-            prev_node.next = node
-            prev_node = node
-        else:
-            head = node
-            prev_node = node
-    print_list(head)
-    mid_node = nodes[random.randint(1,length-2)]
+        nodes.append(val)
+    llist.create(nodes)    
+    llist.print_list()
+    mid_node = llist.return_node(random.randint(2,length-1))
     print("Node to be deleted: ("+str(mid_node.val)+")")
     delete_mid(mid_node)
-    print_list(head)
+    llist.print_list()
