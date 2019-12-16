@@ -27,7 +27,7 @@ if __name__=="__main__":
     nodes = []
     head = None
     for i in range(length):
-        val = int(input("Introduce value of node\n"))
+        val = input("Introduce value of node\n")
         node = Node(val)
         nodes.append(node)
         if prev_node:
