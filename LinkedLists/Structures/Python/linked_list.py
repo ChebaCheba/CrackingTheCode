@@ -108,12 +108,15 @@ class ListlessLinkedList():
         for i in range(num-1):
             node = node.next
         return node 
-    def print_list(self):
+    def print_list(self, loop = False):
         if self.head:
             node = self.head
             string = ''
             while node.next != None:
                 string += '('+str(node.val)+')=>'
+                if loop and node == self.tail:
+                    node = node.next
+                    break
                 node = node.next
             string += '('+str(node.val)+')'
             print(string)
