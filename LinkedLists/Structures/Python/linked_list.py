@@ -82,10 +82,12 @@ class ListlessLinkedList():
     def __init__(self):
         self.head = None
         self.tail = None
+        self.length = 0
     def create(self, nodes):
         prev_node = None
         for node in nodes:
             new_node = Node(node)
+            self.length += 1
             if prev_node:
                 prev_node.next = new_node
                 prev_node = new_node
@@ -94,9 +96,13 @@ class ListlessLinkedList():
                 prev_node = new_node
         self.tail = prev_node
     def add_node(self, node):
-        new_node = Node(node)
-        self.tail.next = new_node
-        self.tail = new_node
+        if length:
+            new_node = Node(node)
+            self.length += 1
+            self.tail.next = new_node
+            self.tail = new_node
+        else:
+            self.create([node])
     def return_node(self, num):
         node = self.head
         for i in range(num-1):
