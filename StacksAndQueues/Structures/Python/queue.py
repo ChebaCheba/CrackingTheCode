@@ -5,10 +5,10 @@ class Node:
 class Queue:
     def __init__(self):
         self.queue = []
-    def add(self, item):
+    def enqueue(self, item):
         node = Node(item)
         self.queue.append(node)
-    def remove(self):
+    def dequeue(self):
         node = self.queue[0]
         self.queue = self.queue[1:]
         return node
