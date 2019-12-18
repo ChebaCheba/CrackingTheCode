@@ -6,9 +6,11 @@ class Node:
 class Stack:
     def __init__(self, mins = False):
         self.stack = []
+        self.stack_size = 0
         self.mins = mins
     def pop(self):
         if self.stack:
+            self.stack_size -= 1
             return self.stack.pop()
     def push(self, item):
         node = Node(item)
@@ -19,7 +21,8 @@ class Stack:
             else:
                 node.min = item
         else:
-            node.min = item 
+            node.min = item
+        self.stack_size += 1 
         self.stack.append(node)
     def peek(self):
         if self.stack:
@@ -32,7 +35,7 @@ class Stack:
     def print_stack(self):
         string = ''
         if not self.is_empty():
-            for i in range(len(self.stack)-1):
+            for i in range(self.stack_size-1):
                 string += str(self.stack[i].val)+'|'
             string += str(self.stack[-1].val)
             print(string)
