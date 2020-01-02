@@ -21,6 +21,25 @@ def dfs(node1, node2):
              if node not in visited:
                 stack.append(node)
     return False
+
+def bfs(node1, node2):
+    if node1 == node2:
+        return True
+    queue = []
+    visited = []
+    queue.append(node1)
+    while queue:
+        current_node = queue[0]
+        queue = queue[1:]
+        if current_node == node2:
+            return True
+        if current_node in visited:
+            break
+        visited.append(current_node)
+        for i in current_node.adj:
+            if i not in visited:
+                queue.append(i)
+    return False
         
 if __name__=="__main__":
     graph = Graph()
