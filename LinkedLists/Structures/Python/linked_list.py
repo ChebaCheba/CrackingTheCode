@@ -96,7 +96,7 @@ class ListlessLinkedList():
                 prev_node = new_node
         self.tail = prev_node
     def add_node(self, node):
-        if length:
+        if self.length:
             new_node = Node(node)
             self.length += 1
             self.tail.next = new_node
@@ -105,7 +105,7 @@ class ListlessLinkedList():
             self.create([node])
     def return_node(self, num):
         node = self.head
-        for i in range(num-1):
+        for _ in range(num-1):
             node = node.next
         return node 
     def print_list(self, loop = False):
