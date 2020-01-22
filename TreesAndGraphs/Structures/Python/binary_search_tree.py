@@ -97,7 +97,7 @@ class BinarySearchTree:
         for i in range(len(arr)):
             string += '  '*(2**(len(arr)-i-1))
             for j in range(len(arr[i])):
-                if arr[i][j]:
+                if arr[i][j] or arr[i][j]==0:
                     string += '('+str(arr[i][j])+')'
                 else:
                     string += '( )'
