@@ -5,11 +5,13 @@ class Node:
         self.val = val
         self.right = None
         self.left = None
+        self.parent = None
 
 class BinarySearchTree:
-    def __init__(self):
+    def __init__(self, parent = False):
         self.root = None
         self.height = 0
+        self.parent = parent
     def insert_node(self, val):
         if not self.root:
             node = Node(val)
@@ -21,6 +23,7 @@ class BinarySearchTree:
                 if not node_trav.right:
                     node = Node(val)
                     node_trav.right = node
+                    node.parent = node_trav
                     self.get_height()
                     break
                 else:
@@ -29,6 +32,7 @@ class BinarySearchTree:
                 if not node_trav.left:
                     node = Node(val)
                     node_trav.left = node
+                    node.parent = node_trav
                     self.get_height()
                     break
                 else:
