@@ -16,7 +16,6 @@ func is_unique(word string) bool {
 		}
 	}
 	return true
-
 }
 
 func main() {
