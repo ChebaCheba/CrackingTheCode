@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"bufio"
+	"strings"
 )
 
 
@@ -42,6 +43,8 @@ func main(){
 	reader := bufio.NewReader(os.Stdin)
 	word, _ := reader.ReadString('\n')
 	word2, _ := reader.ReadString('\n')
+	word = strings.TrimSpace(word)
+	word2 = strings.TrimSpace(word2)
 
 	is_perm := check_perm(word, word2)
 	if(is_perm){
