@@ -1,6 +1,7 @@
 class Node:
     def __init__(self, val):
         self.val = val
+        self.state = "blank"
         self.adj = []
 class Graph:
     def __init__(self):
@@ -30,6 +31,7 @@ class Graph:
 class GraphDict:
     def __init__(self):
         self.nodes = {}
+        self.visited = 0
     def add_node(self, val):
         node = Node(val)
         self.nodes[val] = node
@@ -51,7 +53,6 @@ class GraphDict:
             if not node.adj:
                 string += '[]'
             string += '\n'
-
         print(string)
 
 
