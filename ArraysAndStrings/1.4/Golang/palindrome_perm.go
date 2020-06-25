@@ -10,6 +10,7 @@ import (
 func is_palindrome(word string) bool {
 	wordS := strings.TrimSpace(word)
 	wordS = strings.ReplaceAll(wordS, " ", "")
+	wordS = strings.ToLower(wordS)
 	temp := make(map[byte]struct{})
 	for i, _ := range wordS {
 		if _, ok := temp[wordS[i]]; ok {

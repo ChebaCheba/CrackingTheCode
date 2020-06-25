@@ -3,7 +3,7 @@ def is_palindrome(string):
     if len(string)<2:
         return False
     stripped = string.replace(' ', '')
-    for i in string:
+    for i in stripped:
         if not i.isspace():
             if i.lower() not in temp:
                 temp.add(i.lower())
