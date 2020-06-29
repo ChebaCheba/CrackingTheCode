@@ -6,9 +6,9 @@ def rotate_matrix(matrix):
             offset = j - i
             top = matrix[i][j]
             matrix[i][j] = matrix[last-offset][i]
-            matrix[last-offset][i] = matrix[last][last-j]
-            matrix[last][last-j] = matrix[i+j][last]
-            matrix[i+j][last] = top
+            matrix[last-offset][i] = matrix[last][last-offset]
+            matrix[last][last-offset] = matrix[i+offset][last]
+            matrix[i+offset][last] = top
     return matrix
 
 if __name__=="__main__":
